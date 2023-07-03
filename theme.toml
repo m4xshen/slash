@@ -1,0 +1,12 @@
+name = "Slash"
+license = "MIT"
+licenselink = "https://github.com/m4xshen/slash/blob/master/LICENSE"
+description = "A minimal hugo dark theme"
+homepage = "http://github.com/m4xshen/slash/"
+tags = ["blog"]
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Max Shen"
+  homepage = "https://github.com/m4xshen"

@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+{{ if .IsHome }}
+<h1 class="greet">Hi, I'm Max Shen!</h1>
+<div class="intro">
+  I'm an open source developer in Taiwan. I am passionate about solving problems by making projects about Neovim and Web.
+</div>
+
+<h2>Latest Posts</h2>
+{{ else }}
+<h2>{{ .Title }}</h2>
+{{ end }}
+
+<ul class="list">
+  {{- range where site.RegularPages "Type" "in" site.Params.mainSections -}}
+  <li class="list-item">
+    <a href="{{ .Permalink }}">
+      <article class="article">
+        <h3 class="article-title">{{ .Title }}</h3>
+        <div class="article-date">
+          {{ .Date | time.Format ":date_medium" }}
+        </div>
+      </article>
+    </a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ end }}
