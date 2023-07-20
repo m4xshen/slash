@@ -141,6 +141,7 @@ img {
   font-family: 'Fira Code', monospace;
   font-size: 0.95em;
   border-radius: 6px;
+  background-color: #1e1e2e;
 }
 
 .content code {
