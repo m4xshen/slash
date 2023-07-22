@@ -166,7 +166,9 @@ img {
   line-height: 2;
 }
 
-
+.utterances {
+  margin: 0;
+}
 
 
 .greet {
