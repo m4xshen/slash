@@ -4,6 +4,17 @@
   <h1>
     {{ .Title }}
   </h1>
+
+  {{ if .Params.tags }}
+  <div class="tags">
+    {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
+    <a href="{{ $href }}">
+      <code>🏷️{{ . }}</code>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
   {{ .Content }}
   <h3>Comments</h3>
 </div>

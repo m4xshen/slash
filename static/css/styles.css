@@ -170,6 +170,16 @@ img {
   margin: 0;
 }
 
+.tags {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.tags a {
+  text-decoration: none;
+}
+
 
 .greet {
   margin-bottom: 0.5em;
