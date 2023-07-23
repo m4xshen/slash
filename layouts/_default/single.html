@@ -16,9 +16,10 @@
   {{ end }}
 
   {{ .Content }}
-  <h3>Comments</h3>
 </div>
 
+{{ if and site.DisqusShortname (not (eq .Params.comments false)) }}
+<h2 class="comments">Comments</h2>
 <script src="https://utteranc.es/client.js"
         repo="m4xshen/m4xshen.dev"
         issue-term="pathname"
@@ -26,4 +27,6 @@
         crossorigin="anonymous"
         async>
 </script>
+{{ end }}
+
 {{ end }}

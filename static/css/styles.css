@@ -166,6 +166,10 @@ img {
   line-height: 2;
 }
 
+.comments {
+  margin-top: 3em;
+}
+
 .utterances {
   margin: 0;
 }
