@@ -23,18 +23,14 @@ a {
   color: white;
 }
 
-.content a {
+.content a:not(.tags a){
   color: #3da2f5;
 }
 
-.content a:hover {
+.content a:not(.tags a):hover {
   background-color: #3da2f5;
   color: white;
   text-decoration-color: #3da2f5;
-}
-
-.content .tags a {
-  color: #ffffff;
 }
 
 img {
