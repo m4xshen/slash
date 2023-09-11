@@ -55,6 +55,10 @@ img {
   border-bottom: 1px solid #333333;
 }
 
+.navbar, .menu {
+  font-family: 'Fira Code', monospace;
+}
+
 .nav-title {
   display: flex;
   align-items: center;
@@ -71,7 +75,6 @@ img {
   font-size: 1.5em;
   font-weight: 600;
   text-decoration: none;
-  font-family: 'Fira Code', monospace;
 }
 
 .nav-items {
@@ -313,7 +316,7 @@ img {
   .nav-items {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 0.1rem;
   }
 
   .nav-item a {
@@ -323,12 +326,14 @@ img {
   }
 
   .nav-item a {
-    color: #888888;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
   }
 
   .nav-item a:hover {
-    color: #a5d6ff;
-    transition: color ease 500ms;
+    background-color: #a5d6ff;
+    color: black;
+    transition: all ease 200ms;
   }
 
   .menu-button {
