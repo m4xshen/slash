@@ -1,16 +1,21 @@
 <h1 align="center">
-    Slash
+  Slash
 </h1>
 
 Home Page | Single Page
 :-------------------------:|:-------------------------:
 ![home](https://github.com/m4xshen/slash/assets/74842863/258beec0-1690-4a4b-b959-86e22f84245a) | ![single](https://github.com/m4xshen/slash/assets/74842863/8ed3e26d-ec7f-414e-86aa-b5e3f7e70d69)
 
-
-
 ## 📃 Introduction
 
-A simple dark Hugo theme for personal blog or dev blog.
+A minimal dark Hugo theme for any kind of blog.
+
+## ⚙️  Features
+
+- Google Analytics
+- Utterances comments widget
+- Tags for articles
+- Code syntax highlighting
 
 ## 📦 Installation
 

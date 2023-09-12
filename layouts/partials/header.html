@@ -4,7 +4,7 @@
     <svg height="32" width="32" viewBox="0 0 32 32">
       <path d="M22 5L9 28" stroke="#333333"></path>
     </svg>
-    <a href="/" class="logo-text">Dev</a>
+    <a href="/" class="logo-text">{{ .Site.Params.slash | default "Blog" }}</a>
   </div>
   <div class="nav-items">
     {{- range .Site.Menus.main -}}

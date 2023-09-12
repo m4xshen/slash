@@ -18,9 +18,8 @@
   {{ .Content }}
 </div>
 
-{{ if and site.DisqusShortname (not (eq .Params.comments false)) }}
+{{ if and .Site.Params.commentsRepo (not (eq .Params.comments false)) }}
 <h2 class="comments">Comments</h2>
-
 <script src="https://utteranc.es/client.js"
         repo="{{ .Site.Params.commentsRepo }}"
         issue-term="pathname"

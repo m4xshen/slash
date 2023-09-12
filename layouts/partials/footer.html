@@ -1,19 +1,25 @@
 <footer class="footer">
   <div class="footer-text">
     <div>
-      &copy; 2023 Max Shen
+      &copy; {{ now.Year }} {{ .Site.Params.author }}
     </div>
     <div>
       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/m4xshen/slash">Slash</a>
     </div>
   </div>
   <div class="footer-icons">
-    <a href="https://github.com/m4xshen">
+    {{ if .Site.Params.github }}
+    <a href="{{ .Site.Params.github }}">
       <i class="icon fa-brands fa-github"></i>
     </a>
-    <hr color="#888888">
-    <a href="mailto:m4xshen@gmail.com">
-      <i class="icon fa-solid fa-envelope"></i>
-    </a>
+    {{ end }}
+    {{ if and .Site.Params.github .Site.Params.email }}
+      <hr color="#888888">
+    {{ end }}
+    {{ if .Site.Params.email }}
+      <a href="mailto:{{ .Site.Params.email }}">
+        <i class="icon fa-solid fa-envelope"></i>
+      </a>
+    {{ end }}
   </div>
 </footer>
