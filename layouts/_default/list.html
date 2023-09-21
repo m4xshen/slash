@@ -18,8 +18,8 @@ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }} {{ end
 <div class="mt-8 flex flex-col gap-8">
   {{- range $pages -}}
   <a href="{{ .Permalink }}" class="hover:underline">
-    <article class="flex flex-col md:flex-row justify-between gap-2">
-      <h3 class="font-semibold text-2xl">{{ .Title }}</h3>
+    <article class="flex flex-col md:flex-row justify-between gap-10">
+      <h3 class="font-semibold text-2xl font-sans">{{ .Title }}</h3>
       <div class="text-base text-[#a5d6ff] flex-shrink-0">
         {{ .Date | time.Format ":date_medium" }}
       </div>
