@@ -1,25 +1,28 @@
-<footer class="footer">
-  <div class="footer-text">
+<footer
+  class="border-t border-t-[#333333] text-[#888888] py-12 flex text-sm justify-center items-center gap-4"
+>
+  <div class="flex flex-col items-center">
+    <div>&copy; {{ now.Year }} {{ .Site.Params.author }}</div>
     <div>
-      &copy; {{ now.Year }} {{ .Site.Params.author }}
-    </div>
-    <div>
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/m4xshen/slash">Slash</a>
+      Powered by
+      <a href="https://gohugo.io/" class="underline text-[#888888]">Hugo</a> &
+      <a
+        href="https://github.com/m4xshen/slash"
+        class="underline text-[#888888]"
+        >Slash</a
+      >
     </div>
   </div>
-  <div class="footer-icons">
+  <div class="flex gap-6">
     {{ if .Site.Params.github }}
     <a href="{{ .Site.Params.github }}">
-      <i class="icon fa-brands fa-github"></i>
+      <i class="text-3xl text-[#888888] hover:text-[#a5d6ff] transition-colors fa-brands fa-github"></i>
     </a>
     {{ end }}
-    {{ if and .Site.Params.github .Site.Params.email }}
-      <hr color="#888888">
-    {{ end }}
     {{ if .Site.Params.email }}
-      <a href="mailto:{{ .Site.Params.email }}">
-        <i class="icon fa-solid fa-envelope"></i>
-      </a>
+    <a href="mailto:{{ .Site.Params.email }}">
+      <i class="text-3xl text-[#888888] hover:text-[#a5d6ff] transition-colors fa-solid fa-envelope"></i>
+    </a>
     {{ end }}
   </div>
 </footer>

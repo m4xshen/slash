@@ -1,39 +1,44 @@
-<nav class="navbar">
-  <div class="nav-title">
-    <img src="/avatar.jpg" class="logo" />
+<nav
+  class="flex items-center justify-between h-20 px-5 sm:px-10 lg:px-20 xl:px-60 border-b border-b-[#333333] font-mono"
+>
+  <div class="flex items-center">
+    <img
+      src="/avatar.jpg"
+      class="h-12 w-12 rounded-full border border-[#333333]"
+    />
     <svg height="32" width="32" viewBox="0 0 32 32">
       <path d="M22 5L9 28" stroke="#333333"></path>
     </svg>
-    <a href="/" class="logo-text">{{ .Site.Params.slash | default "Blog" }}</a>
+    <a href="/" class="text-3xl font-semibold"
+      >{{ .Site.Params.slash | default "Blog" }}</a
+    >
   </div>
-  <div class="nav-items">
+  <div class="hidden sm:flex items-center gap-1">
     {{- range .Site.Menus.main -}}
-    <div class="nav-item">
-      <a href="{{ .URL }}">
-        {{ .Name }}
-      </a>
+    <div
+      class="text-lg font-medium py-1 px-3 rounded-md hover:bg-[#a5d6ff] hover:text-black transition-colors"
+    >
+      <a href="{{ .URL }}"> {{ .Name }} </a>
     </div>
     {{ end }}
   </div>
-  <div class="menu-button">
+  <button class="block sm:hidden menu-button">
     <i class="fa-solid fa-bars"></i>
-  </div>
+  </button>
 </nav>
 
-<div class="menu">
+<div class="flex flex-col items-center justify-around h-36 sm:hidden menu">
   {{- range .Site.Menus.main -}}
   <div class="menu-item">
-    <a href="{{ .URL }}">
-      {{ .Name }}
-    </a>
+    <a href="{{ .URL }}"> {{ .Name }} </a>
   </div>
   {{ end }}
 </div>
 
 <script>
-const button = document.querySelector('.menu-button');
-const menu = document.querySelector('.menu');
-button.onclick = () => {
-  menu.classList.toggle('open');
-};
+  const button = document.querySelector(".menu-button");
+  const menu = document.querySelector(".menu");
+  button.onclick = () => {
+    menu.classList.toggle("open");
+  };
 </script>

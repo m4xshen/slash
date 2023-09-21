@@ -1,32 +1,31 @@
-{{ define "main" }}
+{{ define "main" }} {{ if .IsHome }}
+<h1 class="my-4 text-5xl font-mono font-bold">
+  Hi, I'm {{ .Site.Params.author }}!
+</h1>
+<div
+  class="text-lg font-medium leading-5 font-sans w-full max-w-2xl mt-10 mb-20"
+>
+  {{ .Site.Params.intro }}
+</div>
 
-{{ if .IsHome }}
-<h1 class="greet">Hi, I'm {{ .Site.Params.author }}!</h1>
-<div class="intro">{{ .Site.Params.intro }}</div>
-
-<h2>Latest Posts</h2>
+<h2 class="font-bold text-4xl font-mono">Latest Posts</h2>
 {{ else }}
-<h2>{{ .Title }}</h2>
-{{ end }}
+<h2 class="font-bold text-4xl font-mono">{{ .Title }}</h2>
+{{ end }} {{ $pages := union .RegularPages .Sections }} {{ if .IsHome }} {{
+$pages = where site.RegularPages "Type" "in" site.Params.mainSections }} {{ end
+}}
 
-{{ $pages := union .RegularPages .Sections }}
-{{ if .IsHome }}
-{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{ end }}
-
-<ul class="list">
+<div class="mt-8 flex flex-col gap-8">
   {{- range $pages -}}
-  <li class="list-item">
-    <a href="{{ .Permalink }}">
-      <article class="article">
-        <h3 class="article-title">{{ .Title }}</h3>
-        <div class="article-date">
-          {{ .Date | time.Format ":date_medium" }}
-        </div>
-      </article>
-    </a>
-  </li>
+  <a href="{{ .Permalink }}" class="hover:underline">
+    <article class="flex flex-col md:flex-row justify-between gap-2">
+      <h3 class="font-semibold text-2xl">{{ .Title }}</h3>
+      <div class="text-base text-[#a5d6ff] flex-shrink-0">
+        {{ .Date | time.Format ":date_medium" }}
+      </div>
+    </article>
+  </a>
   {{ end }}
-</ul>
+</div>
 
 {{ end }}

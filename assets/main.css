@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content a:not(.tags a):hover {
+  background-color: #3da2f5;
+  color: white;
+  text-decoration-color: #3da2f5;
+}
+
+.menu {
+  background-color: #000000;
+  border-bottom: 1px solid #333333;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 9em;
+}
+
+.open {
+  display: flex;
+}
+
+.content code,
+.content pre {
+  font-family: "Fira Code", monospace;
+  font-size: 0.95em;
+  border-radius: 6px;
+  background-color: #0d1117;
+  border: 1px solid #344359;
+}
+
+.content code {
+  padding: 0.2em 0.4em;
+  line-height: 1.5;
+}
+
+.content pre {
+  padding: 1em 2em;
+  margin: 2em 0;
+  overflow: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.content pre::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.content pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.content pre > code {
+  border: none;
+}
+
+.utterances {
+  margin: 0;
+}

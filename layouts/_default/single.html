@@ -1,32 +1,34 @@
 {{ define "main" }}
 
-<div class="content">
-  <h1>
-    {{ .Title }}
-  </h1>
+<div
+  class="text-base prose-lg prose-invert prose-h1:text-4xl prose-h1:font-bold prose-h1:font-mono prose-h2:text-3xl prose-h2:font-bold prose-h3:text-2xl prose-h3:font-semibold prose-ol:list-decimal prose-ul:list-disc prose-p:leading-8 prose-a:text-[#3da2f5] prose-img:rounded-md prose-img:border-[#344359] prose-img:border"
+>
+  <h1>{{ .Title }}</h1>
 
   {{ if .Params.tags }}
-  <div class="tags">
+  <div class="flex mb-5 gap-2">
     {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
     <a href="{{ $href }}">
-      <code>🏷️{{ . }}</code>
+      <code
+        class="p-1 bg-[#0d1117] rounded-md border text-white border-[#344359]"
+        >🏷️{{ . }}</code
+      >
     </a>
     {{ end }}
   </div>
   {{ end }}
 
-  {{ .Content }}
+  <div class="content">{{ .Content }}</div>
 </div>
 
 {{ if and .Site.Params.commentsRepo (not (eq .Params.comments false)) }}
-<h2 class="comments">Comments</h2>
-<script src="https://utteranc.es/client.js"
-        repo="{{ .Site.Params.commentsRepo }}"
-        issue-term="pathname"
-        theme="dark-blue"
-        crossorigin="anonymous"
-        async>
-</script>
-{{ end }}
-
-{{ end }}
+<h2 class="mt-12 text-4xl font-bold">Comments</h2>
+<script
+  src="https://utteranc.es/client.js"
+  repo="{{ .Site.Params.commentsRepo }}"
+  issue-term="pathname"
+  theme="dark-blue"
+  crossorigin="anonymous"
+  async
+></script>
+{{ end }} {{ end }}
